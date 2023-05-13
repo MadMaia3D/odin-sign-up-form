@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Sign-Up</title>
+</head>
+
+<body class="reset-margin reset-padding">
+    <div class="main-container">
+        <div class="image-container"></div>
+        <section class="introduction-container">
+            <h1 class="weight-medium">
+                This is not a real online Service! You know you need something like this in your life to help you
+                realize
+                you
+                deepest dreams.<br>
+                Sign up now to get started.
+            </h1>
+            <h2 class="weight-medium">You know you want to.</h2>
+        </section>
+
+        <section class="form-container light-shadow debug">
+            <h2 class="weight-medium reset-margin reset-padding">Let's do this!</h2>
+            <form class="debug" id="sign-up-form" action="https://www.httpbin.org/post" method="post">
+                <ul class="form-grid reset-margin reset-padding">
+                    <li>
+                        <label class="weight-medium letter-spacing" for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name">
+                    </li>
+                    <li>
+                        <label class="weight-medium letter-spacing" for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name">
+                    </li>
+                    <li>
+                        <label class="weight-medium letter-spacing" for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </li>
+                    <li>
+                        <label class="weight-medium letter-spacing" for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone-number">
+                    </li>
+                    <li>
+                        <label class="weight-medium letter-spacing" for="password">Password</label>
+                        <input type="password" id="password" name="password">
+                    </li>
+                    <li>
+                        <label class="weight-medium letter-spacing" for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password">
+                    </li>
+                </ul>
+            </form>
+        </section>
+        <section class="submit-container">
+            <button class="button reset-margin light-shadow weight-bold letter-spacing" form="sign-up-form"
+                type="submit">
+                Create Account
+            </button>
+            <p class="weight-medium">Already have an account? <a class="link" href="#">Log in</a></p>
+        </section>
+    </div>
+
+</body>
+
+</html>
