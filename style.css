@@ -71,7 +71,7 @@ body {
     min-height: 100vh;
 }
 .image-container {
-    background: url("https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+    background: url("./images/love-6328393_1280.webp");
     background-size: cover;
     background-position: center;
     grid-area: 1/1/4/2;
