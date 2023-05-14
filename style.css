@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 /* ========================== */
 /* ===== GLOBALS STYLES ===== */
@@ -20,6 +20,9 @@
     --color-invalid: hsl(340, 100%, 60%);
     --color-valid: hsl(100, 40%, 40%);
     --shadow-light: #000;
+}
+.weight-light {
+    font-weight: 300;
 }
 .weight-medium {
     font-weight: 500;
@@ -75,6 +78,12 @@ body {
     background-size: cover;
     background-position: center;
     grid-area: 1/1/4/2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.image-container p a {
+    color: var(--color-white-strong);
 }
 
 .introduction-container {
