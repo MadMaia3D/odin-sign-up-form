@@ -16,6 +16,9 @@
     --color-white: #fff;
     --color-primary-1: hsl(10, 50%, 40%);
     --color-primary-2: hsl(10, 60%, 50%);
+    --color-focus: hsl(220, 50%, 50%);
+    --color-invalid: hsl(10, 70%, 50%);
+    --color-valid: hsl(100, 50%, 50%);
     --shadow-light: #0002;
 }
 .weight-medium {
@@ -23,9 +26,6 @@
 }
 .weight-bold {
     font-weight: 700;
-}
-.debug {
-    outline: 1px solid #f000;
 }
 .button {
     background: var(--color-primary-1);
@@ -35,7 +35,7 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
-    transition: 250ms;
+    transition: 500ms;
 }
 .button:hover,
 .button:focus {
@@ -79,7 +79,7 @@ body {
 
 .introduction-container {
     grid-area: 1/2/2/3;
-    padding: 4rem;
+    padding: 5rem 4rem 3rem 4rem;
     max-width: 52rem;
     align-self: end;
 }
@@ -115,11 +115,17 @@ body {
 }
 .form-grid label span {
     text-transform: initial;
-    /* margin-left: 0.5rem; */
     font-weight: 400;
-    color: hsl(0, 50%, 50%);
+    color: var(--color-gray-20);
     opacity: 0%;
-    transition: opacity 250ms;
+    transition: 500ms;
+}
+.form-grid input:not(:placeholder-shown):focus + label span {
+    opacity: 100%;
+}
+.form-grid input:not(:placeholder-shown):not(:focus):invalid + label span {
+    opacity: 100%;
+    color: hsl(0, 70%, 50%);
 }
 .form-grid input {
     height: 2rem;
@@ -128,18 +134,16 @@ body {
     padding-left: 0.5rem;
     font-size: 0.9rem;
     outline-offset: -2px;
-}
-.form-grid input:not(:placeholder-shown):invalid + label span {
-    opacity: 100%;
+    outline: 2px solid transparent;
 }
 .form-grid input:focus {
-    outline: 2px solid hsl(220, 50%, 50%);
+    outline-color: var(--color-focus);
 }
 .form-grid input:not(:placeholder-shown):not(:focus):invalid {
-    outline: 2px solid hsl(10, 70%, 50%);
+    outline-color: var(--color-invalid);
 }
 .form-grid input:not(:placeholder-shown):not(:focus):valid {
-    outline: 2px solid hsl(100, 50%, 50%);
+    outline-color: var(--color-valid);
 }
 
 .submit-container {
