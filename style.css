@@ -37,7 +37,8 @@
     cursor: pointer;
     transition: 250ms;
 }
-.button:hover {
+.button:hover,
+.button:focus {
     background: var(--color-primary-2);
 }
 .letter-spacing {
@@ -95,9 +96,10 @@ body {
 .form-grid {
     margin-right: 10rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(max(15rem, 50%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(max(15rem, 30%), 1fr));
     list-style: none;
-    row-gap: 1rem;
+    /* row-gap: 1rem; */
+    gap: 1rem max(1rem, 10%);
 }
 .form-grid > li {
     display: flex;
@@ -109,10 +111,22 @@ body {
     font-size: 0.75rem;
 }
 .form-grid input {
-    width: 80%;
+    /* width: 80%; */
     height: 2rem;
     border: 1px solid var(--color-gray-80);
-    border-radius: 0.25rem;
+    border-radius: 0.3125rem;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+    outline-offset: -2px;
+}
+.form-grid input:focus {
+    outline: 2px solid hsl(220, 50%, 50%);
+}
+.form-grid input:not(:placeholder-shown):not(:focus):invalid {
+    outline: 2px solid hsl(0, 50%, 50%);
+}
+.form-grid input:not(:placeholder-shown):not(:focus):valid {
+    outline: 2px solid hsl(100, 50%, 50%);
 }
 
 .submit-container {
@@ -124,6 +138,7 @@ body {
     text-decoration: none;
     transition: 250ms;
 }
-.submit-container .link:hover {
+.submit-container .link:hover,
+.submit-container .link:focus {
     color: var(--color-primary-2);
 }
