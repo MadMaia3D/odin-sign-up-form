@@ -28,28 +28,45 @@
             <form class="debug" id="sign-up-form" action="https://www.httpbin.org/post" method="post">
                 <ul class="form-grid reset-margin reset-padding">
                     <li>
-                        <label class="weight-medium letter-spacing" for="first-name">First Name*</label>
-                        <input type="text" id="first-name" name="first-name" placeholder=" " required>
+                        <input type="text" id="first-name" name="first-name" pattern="^[a-z A-Z]{1,20}$" placeholder=" "
+                            required>
+                        <label class="weight-medium letter-spacing" for="first-name">First Name*
+                            <span>(Only letters allowed)</span></label>
                     </li>
                     <li>
-                        <label class="weight-medium letter-spacing" for="last-name">Last Name*</label>
-                        <input type="text" id="last-name" name="last-name" placeholder=" " required>
+                        <input type="text" id="last-name" name="last-name" pattern="^[a-z A-Z]{1,20}$" placeholder=" "
+                            required>
+                        <label class="weight-medium letter-spacing" for="last-name">Last Name*
+                            <span>(Only letters allowed)</span>
+                        </label>
                     </li>
                     <li>
-                        <label class="weight-medium letter-spacing" for="email">Email*</label>
                         <input type="email" id="email" name="email" placeholder=" " required>
+                        <label class="weight-medium letter-spacing" for="email">Email*
+                            <span>(Use the format example@example.com)</span>
+                        </label>
                     </li>
                     <li>
-                        <label class="weight-medium letter-spacing" for="phone-number">Phone Number</label>
-                        <input type="tel" id="phone-number" name="phone-number" placeholder=" ">
+                        <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{1,}$" placeholder=" ">
+                        <label class="weight-medium letter-spacing" for="phone-number">Phone Number
+                            <span>(Should contain only numbers)</span>
+                        </label>
                     </li>
                     <li>
-                        <label class="weight-medium letter-spacing" for="password">Password*</label>
-                        <input type="password" id="password" name="password" placeholder=" " required>
+                        <input type="password" id="password" name="password"
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=" "
+                            required>
+                        <label class="weight-medium letter-spacing" for="password">Password*
+                            <span>(Should contain letters and numbers)</span>
+                        </label>
                     </li>
                     <li>
-                        <label class="weight-medium letter-spacing" for="confirm-password">Confirm Password*</label>
-                        <input type="password" id="confirm-password" name="confirm-password" placeholder=" " required>
+                        <input type="password" id="confirm-password" name="confirm-password"
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=" "
+                            required>
+                        <label class="weight-medium letter-spacing" for="confirm-password">Confirm Password*
+                            <span>(Should contain letters and numbers)</span>
+                        </label>
                     </li>
                 </ul>
             </form>

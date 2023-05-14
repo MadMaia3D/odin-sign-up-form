@@ -98,7 +98,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(max(15rem, 30%), 1fr));
     list-style: none;
-    /* row-gap: 1rem; */
     gap: 1rem max(1rem, 10%);
 }
 .form-grid > li {
@@ -109,9 +108,20 @@ body {
 .form-grid label {
     text-transform: uppercase;
     font-size: 0.75rem;
+    order: -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-grid label span {
+    text-transform: initial;
+    /* margin-left: 0.5rem; */
+    font-weight: 400;
+    color: hsl(0, 50%, 50%);
+    opacity: 0%;
+    transition: opacity 250ms;
 }
 .form-grid input {
-    /* width: 80%; */
     height: 2rem;
     border: 1px solid var(--color-gray-80);
     border-radius: 0.3125rem;
@@ -119,11 +129,14 @@ body {
     font-size: 0.9rem;
     outline-offset: -2px;
 }
+.form-grid input:not(:placeholder-shown):invalid + label span {
+    opacity: 100%;
+}
 .form-grid input:focus {
     outline: 2px solid hsl(220, 50%, 50%);
 }
 .form-grid input:not(:placeholder-shown):not(:focus):invalid {
-    outline: 2px solid hsl(0, 50%, 50%);
+    outline: 2px solid hsl(10, 70%, 50%);
 }
 .form-grid input:not(:placeholder-shown):not(:focus):valid {
     outline: 2px solid hsl(100, 50%, 50%);
