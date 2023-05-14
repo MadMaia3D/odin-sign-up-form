@@ -94,7 +94,7 @@ body {
     gap: 1rem;
 }
 .form-grid {
-    margin-right: 10rem;
+    margin-right: min(33%, 16rem);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(max(15rem, 30%), 1fr));
     list-style: none;
