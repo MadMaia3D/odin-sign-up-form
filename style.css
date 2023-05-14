@@ -18,7 +18,7 @@
     --color-primary-2: hsl(10, 60%, 50%);
     --color-focus: hsl(220, 50%, 50%);
     --color-invalid: hsl(10, 70%, 50%);
-    --color-valid: hsl(100, 50%, 50%);
+    --color-valid: hsl(100, 50%, 70%);
     --shadow-light: #0002;
 }
 .weight-medium {
@@ -68,7 +68,7 @@ body {
     grid-template-rows: auto auto 1fr;
     background: var(--color-gray-97);
     color: var(--color-black);
-    height: 100vh;
+    min-height: 100vh;
 }
 .image-container {
     background: url("https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
@@ -103,17 +103,20 @@ body {
 .form-grid > li {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: 0.25rem;
 }
 .form-grid label {
+    margin-left: 0.125rem;
     text-transform: uppercase;
     font-size: 0.75rem;
-    order: -1;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .form-grid label span {
+    text-align: right;
+    display: none;
     text-transform: initial;
     font-weight: 400;
     color: var(--color-gray-20);
@@ -121,13 +124,16 @@ body {
     transition: 500ms;
 }
 .form-grid input:not(:placeholder-shown):focus + label span {
+    display: initial;
     opacity: 100%;
 }
 .form-grid input:not(:placeholder-shown):not(:focus):invalid + label span {
+    display: initial;
     opacity: 100%;
-    color: hsl(0, 70%, 50%);
+    color: var(--color-invalid);
 }
 .form-grid input {
+    order: 1;
     height: 2rem;
     border: 1px solid var(--color-gray-80);
     border-radius: 0.3125rem;
