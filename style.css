@@ -7,19 +7,19 @@
     box-sizing: border-box;
 }
 :root {
-    --color-black: #111;
-    --color-gray-20: hsl(0, 0%, 20%);
-    --color-gray-40: hsl(0, 0%, 40%);
-    --color-gray-60: hsl(0, 0%, 60%);
-    --color-gray-80: hsl(0, 0%, 80%);
-    --color-gray-97: hsl(0, 0%, 97%);
-    --color-white: #fff;
-    --color-primary-1: hsl(10, 50%, 40%);
-    --color-primary-2: hsl(10, 60%, 50%);
-    --color-focus: hsl(220, 50%, 50%);
-    --color-invalid: hsl(10, 70%, 50%);
-    --color-valid: hsl(100, 50%, 70%);
-    --shadow-light: #0002;
+    --color-black-strong: hsl(210, 50%, 2%);
+    --color-black-medium: hsl(210, 40%, 5%);
+    --color-blue-weak: hsl(200, 100%, 70%);
+    --color-white-weak: hsl(180, 20%, 20%);
+    --color-white-medium: hsl(0, 0%, 80%);
+    --color-white-strong: #fff;
+    --color-primary-1: hsl(200, 100%, 20%);
+    --color-primary-2: hsl(200, 80%, 50%);
+    --color-primary-3: hsl(200, 100%, 60%);
+    --color-focus: hsl(180, 50%, 40%);
+    --color-invalid: hsl(340, 100%, 60%);
+    --color-valid: hsl(100, 40%, 40%);
+    --shadow-light: #000;
 }
 .weight-medium {
     font-weight: 500;
@@ -29,7 +29,7 @@
 }
 .button {
     background: var(--color-primary-1);
-    color: var(--color-white);
+    color: var(--color-white-strong);
     padding: 1rem 3rem;
     border: 0;
     border-radius: 0.5rem;
@@ -66,8 +66,8 @@ body {
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-template-rows: auto auto 1fr;
-    background: var(--color-gray-97);
-    color: var(--color-black);
+    background: var(--color-black-strong);
+    color: var(--color-white-strong);
     min-height: 100vh;
 }
 .image-container {
@@ -79,15 +79,15 @@ body {
 
 .introduction-container {
     grid-area: 1/2/2/3;
-    padding: 5rem 4rem 3rem 4rem;
+    padding: 6rem 4rem 3rem 4rem;
     max-width: 52rem;
     align-self: end;
 }
 
 .form-container {
     padding: 1rem 3rem 2rem 4rem;
-    background: var(--color-white);
-    color: var(--color-gray-20);
+    background: var(--color-black-medium);
+    color: var(--color-white-medium);
     grid-area: 2/2/3/3;
     display: flex;
     flex-direction: column;
@@ -116,12 +116,11 @@ body {
 }
 .form-grid label span {
     text-align: right;
-    display: none;
     text-transform: initial;
     font-weight: 400;
-    color: var(--color-gray-20);
+    color: var(--color-blue-weak);
     opacity: 0%;
-    transition: 500ms;
+    transition: color 500ms, opacity 500ms;
 }
 .form-grid input:not(:placeholder-shown):focus + label span {
     display: initial;
@@ -135,12 +134,15 @@ body {
 .form-grid input {
     order: 1;
     height: 2rem;
-    border: 1px solid var(--color-gray-80);
+    border: 1px solid var(--color-white-weak);
+    background: var(--color-black-strong);
+    color: var(--color-white-medium);
     border-radius: 0.3125rem;
     padding-left: 0.5rem;
     font-size: 0.9rem;
     outline-offset: -2px;
     outline: 2px solid transparent;
+    transition: outline-color 500ms;
 }
 .form-grid input:focus {
     outline-color: var(--color-focus);
@@ -157,11 +159,11 @@ body {
     padding: 3rem 4rem;
 }
 .submit-container .link {
-    color: var(--color-primary-1);
+    color: var(--color-primary-2);
     text-decoration: none;
     transition: 250ms;
 }
 .submit-container .link:hover,
 .submit-container .link:focus {
-    color: var(--color-primary-2);
+    color: var(--color-primary-3);
 }
