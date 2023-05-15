@@ -147,6 +147,7 @@ body {
 /* ===== INTRODUCTION ===== */
 /* ======================== */
 .introduction-container {
+    position: relative;
     padding: 4rem 3rem 3rem 4rem;
     max-width: 32rem;
 }
@@ -154,7 +155,29 @@ body {
 .introduction-container > h2 {
     font-size: 1.25rem;
 }
-
+.fa-solid.fa-angle-down {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    color: #fffa;
+    animation: arrows 2s infinite;
+}
+@keyframes arrows {
+    0% {
+        translate: 0 -0.5rem;
+    }
+    50% {
+        translate: 0 0;
+    }
+    100% {
+        translate: 0 -0.5rem;
+    }
+}
+@media screen and (min-height: 720px) {
+    .fa-solid.fa-angle-down {
+        display: none;
+    }
+}
 @media screen and (min-width: 768px) {
     .introduction-container {
         grid-area: 1/2/2/3;
