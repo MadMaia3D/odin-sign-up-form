@@ -146,29 +146,29 @@ body {
     margin-left: 0.125rem;
     text-transform: uppercase;
     font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
 }
-.form-grid label span {
+.form-grid span {
     text-align: right;
     text-transform: initial;
     font-weight: 400;
     color: var(--color-blue-weak);
+    font-size: 0.75rem;
     opacity: 0%;
     transition: color 500ms, opacity 500ms;
 }
-.form-grid input:not(:placeholder-shown):focus + label span {
+.form-grid input:not(:placeholder-shown):focus + span {
     display: initial;
     opacity: 100%;
 }
-.form-grid input:not(:placeholder-shown):not(:focus):invalid + label span {
+.form-grid input:not(:placeholder-shown):not(:focus):invalid + span {
     display: initial;
     opacity: 100%;
     color: var(--color-invalid);
 }
 .form-grid input {
-    order: 1;
     height: 2rem;
     border: 1px solid var(--color-white-weak);
     background: var(--color-black-strong);
