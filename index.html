@@ -64,17 +64,15 @@
                         </label>
                     </li>
                     <li>
-                        <input type="password" id="password" name="password"
-                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=" "
-                            required>
+                        <input type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-zA-Z]).{8,}$"
+                            placeholder=" " required>
                         <label class="weight-medium letter-spacing" for="password">Password*
                             <span>(Should contain letters and numbers)</span>
                         </label>
                     </li>
                     <li>
                         <input type="password" id="confirm-password" name="confirm-password"
-                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=" "
-                            required>
+                            pattern="^(?=.*\d)(?=.*[a-zA-Z]).{8,}$" placeholder=" " required>
                         <label class="weight-medium letter-spacing" for="confirm-password">Confirm Password*
                             <span>(Should contain letters and numbers)</span>
                         </label>
