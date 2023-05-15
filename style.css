@@ -65,15 +65,24 @@ body {
     font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
         "Helvetica Neue", sans-serif;
+    background-color: var(--color-black-strong);
 }
 .main-container {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto auto 1fr;
     background: var(--color-black-strong);
     color: var(--color-white-strong);
     min-height: 100vh;
 }
+@media screen and (min-width: 768px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: auto auto 1fr;
+    }
+}
+
+/* ========================= */
+/* ========= IMAGE ========= */
+/* ========================= */
 .image-container {
     background: url("./images/love-6328393_1280.webp");
     background-size: cover;
@@ -87,14 +96,19 @@ body {
 
 .logo {
     --icon-size: 6rem;
-    margin-top: 20%;
+    margin: 0 0 14rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 9rem;
+}
+@media screen and (min-width: 768px) {
+    .logo {
+        margin: 6rem 0 0 0;
+        height: 9rem;
+    }
 }
 .logo .brandname {
     font-family: "Bevan";
@@ -109,17 +123,53 @@ body {
     background-size: contain;
 }
 
-.image-container p a {
+.image-container > p > a {
     color: var(--color-white-strong);
 }
-
-.introduction-container {
-    grid-area: 1/2/2/3;
-    padding: 6rem 4rem 3rem 4rem;
-    max-width: 52rem;
-    align-self: end;
+.image-container > p {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+    .image-container > p > a {
+        color: var(--color-white-strong);
+    }
+    .image-container > p {
+        font-size: 1rem;
+    }
 }
 
+/* ======================== */
+/* ===== INTRODUCTION ===== */
+/* ======================== */
+.introduction-container {
+    padding: 4rem 3rem 3rem 4rem;
+    max-width: 32rem;
+}
+.introduction-container > h1,
+.introduction-container > h2 {
+    font-size: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+    .introduction-container {
+        grid-area: 1/2/2/3;
+        padding: 6rem 4rem 3rem 4rem;
+        max-width: 52rem;
+        align-self: end;
+    }
+    .introduction-container > h1,
+    .introduction-container > h2 {
+        font-size: 1.5rem;
+    }
+}
+/* ======================== */
+/* ========= FORM ========= */
+/* ======================== */
 .form-container {
     padding: 1rem 3rem 2rem 4rem;
     background: var(--color-black-medium);
@@ -132,7 +182,8 @@ body {
 .form-grid {
     margin-right: min(33%, 16rem);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(max(15rem, 30%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(max(16rem, 30%), 1fr));
+    align-items: start;
     list-style: none;
     gap: 1rem max(1rem, 10%);
 }
@@ -146,9 +197,6 @@ body {
     margin-left: 0.125rem;
     text-transform: uppercase;
     font-size: 0.75rem;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
 }
 .form-grid span {
     text-align: right;
@@ -190,9 +238,21 @@ body {
     outline-color: var(--color-valid);
 }
 
+/* ======================== */
+/* ======== SUBMIT ======== */
+/* ======================== */
 .submit-container {
     grid-area: 3/2/4/3;
     padding: 3rem 4rem;
+}
+.submit-container > p {
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+    .submit-container > p {
+        flex-direction: row;
+    }
 }
 .submit-container .link {
     color: var(--color-primary-2);
