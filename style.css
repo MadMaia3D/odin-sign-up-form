@@ -14,12 +14,12 @@
     --color-white-weak: hsl(180, 20%, 20%);
     --color-white-medium: hsl(0, 0%, 80%);
     --color-white-strong: #fff;
-    --color-primary-1: hsl(200, 100%, 20%);
-    --color-primary-2: hsl(200, 80%, 50%);
-    --color-primary-3: hsl(200, 100%, 60%);
+    --color-primary-1: hsl(190, 100%, 20%);
+    --color-primary-2: hsl(180, 80%, 30%);
+    --color-primary-3: hsl(180, 100%, 50%);
     --color-focus: hsl(180, 50%, 40%);
-    --color-invalid: hsl(340, 100%, 60%);
-    --color-valid: hsl(100, 40%, 40%);
+    --color-invalid: hsl(350, 100%, 60%);
+    --color-valid: hsl(150, 40%, 40%);
     --shadow-light: #000;
 }
 .weight-light {
