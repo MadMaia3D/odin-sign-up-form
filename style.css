@@ -19,7 +19,7 @@
     --color-primary-3: hsl(180, 100%, 50%);
     --color-focus: hsl(180, 50%, 40%);
     --color-invalid: hsl(350, 100%, 60%);
-    --color-valid: hsl(150, 40%, 40%);
+    --color-valid: hsl(150, 40%, 30%);
     --shadow-light: #000;
 }
 .weight-light {
